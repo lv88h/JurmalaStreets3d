@@ -1,30 +1,28 @@
 <?php
 include 'db.php';
+//echo $location;
+$username = $user_data['username'];
 
 
-$sql = "SELECT speed FROM users";
-    $stmt = $pdo->query($sql);
-    //$stmt->bindValue(':username', $user_data['username']);
-    //$stmt->execute();
+$sql = "SELECT * FROM groupchatroom WHERE fromuser = :username";
+    $stmt = $pdo->prepare($sql);
+    $stmt->bindValue(':username', $username);
+    $stmt->execute();
+        $counted = $stmt->rowCount();
 
-    $user = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      $counted = $stmt->rowCount();
-		
-foreach ($user as $users)
+
+while ($row = $stmt->fetch())
 {
+    $groupchatroom = $row['message'];
 
+    echo $groupchatroom;
 
-    $iteration == 0;
-	$iteration++;
-
-    $rotation = $users['speed'];
-
-if(!empty($rotation)){
-    if($iteration != $counted){
-    echo $rotation . "*";
-	} else {
-    echo $rotation;
-	}	
-	}	
 }
-   
+    $stmt->execute();
+
+
+//echo $location;
+
+//echo 111;
+
+?>

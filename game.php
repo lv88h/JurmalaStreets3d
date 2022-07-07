@@ -603,6 +603,7 @@ this.house.position.set(804.2014, 10, -205.63472)
 				
 				
 				console.log("times", i);
+				console.log("ielade", skin);
               const lokacijumasivs = [];
 			 
 			//// let objstr = obj[i].toString().split("");
@@ -964,20 +965,22 @@ var username;
                           data: {},
                           success: function (data) {
                                                username = data;
-								alert(username)
+								//alert(username)
                           }
  
                       });
                       
                       var kopadata = username + " " + textarea;
                       
-                      //console.log(kopadata);
+                      console.log("uzpeld", kopadata);
              
                    
                       
 if(textarea){
-	
-	alert(111);
+
+console.log("suta zinju", textarea);
+
+
     $.ajax({
       type: "post",
       url: "groupchatfunction.php",
@@ -986,7 +989,8 @@ if(textarea){
       },
       cache: false,
       success: function(html) {
-			           
+			           console.log("aizsutija");
+
 			           //izmēģinam ievietot kastīti ja aizsūtas ziņa
 			          // this.third.physics.add.box({ y: 10, x: 754.2014 }, { lambert: { color: 'red' } })
 			

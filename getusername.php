@@ -13,7 +13,6 @@ $sql = "SELECT * FROM users WHERE user_id = :user_id";
 
 while ($row = $stmt->fetch())
 {
-	$counter == 0;
     $arrayss = $row['username'];
 
     
